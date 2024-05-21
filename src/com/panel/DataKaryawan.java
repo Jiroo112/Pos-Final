@@ -108,6 +108,7 @@ public class DataKaryawan extends javax.swing.JPanel {
         title = new javax.swing.JLabel();
         fbutton1 = new com.button.Fbutton();
         fbutton2 = new com.button.Fbutton();
+        fbutton3 = new com.button.Fbutton();
 
         jRadioButton1.setText("jRadioButton1");
 
@@ -141,14 +142,14 @@ public class DataKaryawan extends javax.swing.JPanel {
             panelShadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelShadow1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(Scroll, javax.swing.GroupLayout.DEFAULT_SIZE, 989, Short.MAX_VALUE)
+                .addComponent(Scroll, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
                 .addGap(20, 20, 20))
         );
         panelShadow1Layout.setVerticalGroup(
             panelShadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelShadow1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(Scroll, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                .addComponent(Scroll, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
                 .addGap(31, 31, 31))
         );
 
@@ -176,6 +177,13 @@ public class DataKaryawan extends javax.swing.JPanel {
             }
         });
 
+        fbutton3.setText("Tambah");
+        fbutton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fbutton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -186,8 +194,11 @@ public class DataKaryawan extends javax.swing.JPanel {
                         .addGap(45, 45, 45)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addComponent(fbutton3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(fbutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(fbutton2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(body)
                             .addComponent(title)))
@@ -206,7 +217,8 @@ public class DataKaryawan extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fbutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fbutton2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fbutton2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fbutton3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(69, 69, 69)
                 .addComponent(panelShadow1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(48, 48, 48))
@@ -237,12 +249,17 @@ public class DataKaryawan extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_karyawanMouseClicked
 
+    private void fbutton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fbutton3ActionPerformed
+        showForm(regist);
+    }//GEN-LAST:event_fbutton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane Scroll;
     private javax.swing.JLabel body;
     private com.button.Fbutton fbutton1;
     private com.button.Fbutton fbutton2;
+    private com.button.Fbutton fbutton3;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JTable karyawan;
     private Shape.PanelShadow panelShadow1;
