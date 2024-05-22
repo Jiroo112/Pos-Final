@@ -55,6 +55,7 @@ public class DataKaryawan extends javax.swing.JPanel {
             body.setFont(font2);
             fbutton1.setFont(font3);
             fbutton2.setFont(font3);
+            fbutton3.setFont(font3);
         } catch (Exception e) {
             e.getMessage();
         }
@@ -227,22 +228,59 @@ public class DataKaryawan extends javax.swing.JPanel {
 
     private void fbutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fbutton1ActionPerformed
         // TODO add your handling code here:
+        int index = karyawan.getSelectedRow();
+        editk k = new editk();
+        
+        DefaultTableModel model = (DefaultTableModel)karyawan.getModel();  
+
+        
+         String Username = model.getValueAt(index, 0).toString();
+         String Password = model.getValueAt(index, 1).toString();
+         String Nama = model.getValueAt(index, 2).toString();
+         String Gender = model.getValueAt(index, 3).toString();
+         String NoTelp = model.getValueAt(index, 4).toString();
+         String Jabatan = model.getValueAt(index, 5).toString();
+         String Alamat = model.getValueAt(index, 6).toString();
+
+
+         k.setVisible(true);
+         k.pack();
+         
+         k.txt_username.setText(Username);
+         k.pass.setText(Password);
+         k.txt_nama.setText(Nama);
+         k.jComb_gender.setSelectedItem(Gender);
+         k.txt_telp.setText(NoTelp);
+         k.jComb_jabatan.setSelectedItem(Jabatan);
+         k.txt_alamat.setText(Alamat);
     }//GEN-LAST:event_fbutton1ActionPerformed
 
     private void fbutton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fbutton2ActionPerformed
         int index = karyawan.getSelectedRow();
+        editk k = new editk();
         
-        DefaultTableModel tblModel = (DefaultTableModel)karyawan.getModel();
-        String Username = tblModel.getValueAt(index, 0).toString();
+        DefaultTableModel model = (DefaultTableModel)karyawan.getModel();  
+
         
-        try {
-            Statement st = konek.GetConnection().createStatement();
-            st.executeUpdate("DELETE FROM data_karyawan WHERE username =('"+Username+"')");
-            JOptionPane.showMessageDialog(null, "Data berhasil dihapus");
-        } catch (Exception e){
-            JOptionPane.showMessageDialog(null, "Data gagal dihapus");
-        }
-        tabelkaryawan();
+         String Username = model.getValueAt(index, 0).toString();
+         String Password = model.getValueAt(index, 1).toString();
+         String Nama = model.getValueAt(index, 2).toString();
+         String Gender = model.getValueAt(index, 3).toString();
+         String NoTelp = model.getValueAt(index, 4).toString();
+         String Jabatan = model.getValueAt(index, 5).toString();
+         String Alamat = model.getValueAt(index, 6).toString();
+
+
+         k.setVisible(true);
+         k.pack();
+         
+         k.txt_username.setText(Username);
+         k.pass.setText(Password);
+         k.txt_nama.setText(Nama);
+         k.jComb_gender.setSelectedItem(Gender);
+         k.txt_telp.setText(NoTelp);
+         k.jComb_jabatan.setSelectedItem(Jabatan);
+         k.txt_alamat.setText(Alamat);
     }//GEN-LAST:event_fbutton2ActionPerformed
 
     private void karyawanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_karyawanMouseClicked

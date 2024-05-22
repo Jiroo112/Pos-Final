@@ -79,10 +79,9 @@ public class belanja extends javax.swing.JPanel {
             try {
                 Statement st = konek.GetConnection().createStatement();
                 ResultSet rs = st.executeQuery("SELECT (username) FROM riwayat_login ORDER BY (id_riwayat) DESC LIMIT 1");
-                if(rs.next()){
-                nama = rs.getString("username");
-                username.setText(nama);
-                }  
+                  while(rs.next()){
+                username.setText(rs.getString("username"));
+            } 
             } catch (Exception e) {
             }
         }
