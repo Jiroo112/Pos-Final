@@ -43,7 +43,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="fbutton1" min="-2" pref="66" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="fbutton2" min="-2" pref="66" max="-2" attributes="0"/>
+                              <Component id="hapus_button" min="-2" pref="66" max="-2" attributes="0"/>
                           </Group>
                           <Component id="body" min="-2" max="-2" attributes="0"/>
                           <Component id="title" min="-2" max="-2" attributes="0"/>
@@ -68,7 +68,7 @@
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="fbutton1" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="fbutton2" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="hapus_button" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                   <Component id="fbutton3" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
@@ -165,12 +165,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fbutton1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="com.button.Fbutton" name="fbutton2">
+    <Component class="com.button.Fbutton" name="hapus_button">
       <Properties>
         <Property name="text" type="java.lang.String" value="Hapus"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fbutton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hapus_buttonActionPerformed"/>
       </Events>
     </Component>
     <Component class="com.button.Fbutton" name="fbutton3">

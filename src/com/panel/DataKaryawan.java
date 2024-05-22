@@ -6,6 +6,7 @@ package com.panel;
 
 import java.awt.Color;
 import com.main.Admin;
+import com.main.popupregist;
 import com.panel.Registrasi;
 import com.swing.ScrollBar;
 import java.awt.Component;
@@ -27,6 +28,7 @@ public class DataKaryawan extends javax.swing.JPanel {
      * Creates new form NewJPanel
      */
     private Registrasi regist;
+    popupregist popup = new popupregist();
     
     public DataKaryawan() {
         initComponents();
@@ -54,7 +56,7 @@ public class DataKaryawan extends javax.swing.JPanel {
             title.setFont(font);
             body.setFont(font2);
             fbutton1.setFont(font3);
-            fbutton2.setFont(font3);
+            hapus_button.setFont(font3);
             fbutton3.setFont(font3);
         } catch (Exception e) {
             e.getMessage();
@@ -70,6 +72,7 @@ public class DataKaryawan extends javax.swing.JPanel {
         tbl.addColumn("No Telepon");
         tbl.addColumn("Jabatan");
         tbl.addColumn("Alamat");
+        tbl.addColumn("ID Number");
         karyawan.setModel(tbl);
         
         karyawan.getTableHeader().setBackground(new Color(115,206,191));
@@ -85,7 +88,8 @@ public class DataKaryawan extends javax.swing.JPanel {
                 rs.getString("jenis_kelamin"),
                 rs.getString("no_hp"),
                 rs.getString("jabatan"),
-                rs.getString("alamat")
+                rs.getString("alamat"),
+                rs.getString("barcodenumber")
                 });
             } 
             st.close();
@@ -108,7 +112,7 @@ public class DataKaryawan extends javax.swing.JPanel {
         body = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
         fbutton1 = new com.button.Fbutton();
-        fbutton2 = new com.button.Fbutton();
+        hapus_button = new com.button.Fbutton();
         fbutton3 = new com.button.Fbutton();
 
         jRadioButton1.setText("jRadioButton1");
@@ -171,10 +175,10 @@ public class DataKaryawan extends javax.swing.JPanel {
             }
         });
 
-        fbutton2.setText("Hapus");
-        fbutton2.addActionListener(new java.awt.event.ActionListener() {
+        hapus_button.setText("Hapus");
+        hapus_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fbutton2ActionPerformed(evt);
+                hapus_buttonActionPerformed(evt);
             }
         });
 
@@ -200,7 +204,7 @@ public class DataKaryawan extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(fbutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(fbutton2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(hapus_button, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(body)
                             .addComponent(title)))
                     .addGroup(layout.createSequentialGroup()
@@ -218,7 +222,7 @@ public class DataKaryawan extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fbutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fbutton2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hapus_button, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fbutton3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(69, 69, 69)
                 .addComponent(panelShadow1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -255,40 +259,26 @@ public class DataKaryawan extends javax.swing.JPanel {
          k.txt_alamat.setText(Alamat);
     }//GEN-LAST:event_fbutton1ActionPerformed
 
-    private void fbutton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fbutton2ActionPerformed
-        int index = karyawan.getSelectedRow();
-        editk k = new editk();
-        
-        DefaultTableModel model = (DefaultTableModel)karyawan.getModel();  
-
-        
-         String Username = model.getValueAt(index, 0).toString();
-         String Password = model.getValueAt(index, 1).toString();
-         String Nama = model.getValueAt(index, 2).toString();
-         String Gender = model.getValueAt(index, 3).toString();
-         String NoTelp = model.getValueAt(index, 4).toString();
-         String Jabatan = model.getValueAt(index, 5).toString();
-         String Alamat = model.getValueAt(index, 6).toString();
-
-
-         k.setVisible(true);
-         k.pack();
-         
-         k.txt_username.setText(Username);
-         k.pass.setText(Password);
-         k.txt_nama.setText(Nama);
-         k.jComb_gender.setSelectedItem(Gender);
-         k.txt_telp.setText(NoTelp);
-         k.jComb_jabatan.setSelectedItem(Jabatan);
-         k.txt_alamat.setText(Alamat);
-    }//GEN-LAST:event_fbutton2ActionPerformed
+    private void hapus_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapus_buttonActionPerformed
+    int index = karyawan.getSelectedRow();
+    
+    DefaultTableModel model = (DefaultTableModel)karyawan.getModel();      
+    String Username = model.getValueAt(index, 0).toString();
+    
+        try {
+            Statement st = konek.GetConnection().createStatement();
+            ResultSet rs = st.executeQuery("DELETE FROM data_karyawan WHERE username = '"+Username+"';");
+        } catch (Exception e) {
+            e.getMessage();
+        }
+    }//GEN-LAST:event_hapus_buttonActionPerformed
 
     private void karyawanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_karyawanMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_karyawanMouseClicked
 
     private void fbutton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fbutton3ActionPerformed
-        showForm(regist);
+        popup.setVisible(true);
     }//GEN-LAST:event_fbutton3ActionPerformed
 
 
@@ -296,8 +286,8 @@ public class DataKaryawan extends javax.swing.JPanel {
     private javax.swing.JScrollPane Scroll;
     private javax.swing.JLabel body;
     private com.button.Fbutton fbutton1;
-    private com.button.Fbutton fbutton2;
     private com.button.Fbutton fbutton3;
+    private com.button.Fbutton hapus_button;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JTable karyawan;
     private Shape.PanelShadow panelShadow1;
