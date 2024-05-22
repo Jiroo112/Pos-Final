@@ -67,6 +67,7 @@ public class DataKaryawan extends javax.swing.JPanel {
     DefaultTableModel tbl = new DefaultTableModel();
         tbl.addColumn("Username");
         tbl.addColumn("Password");
+        tbl.addColumn("Email");
         tbl.addColumn("Nama");
         tbl.addColumn("Gender");
         tbl.addColumn("No Telepon");
@@ -83,7 +84,8 @@ public class DataKaryawan extends javax.swing.JPanel {
             while(rs.next ()){
                 tbl.addRow(new Object[] {
                 rs.getString("username"),
-                rs.getString("password"),   
+                rs.getString("password"), 
+                rs.getString("email"),
                 rs.getString("nama_karyawan"),
                 rs.getString("jenis_kelamin"),
                 rs.getString("no_hp"),
@@ -240,11 +242,13 @@ public class DataKaryawan extends javax.swing.JPanel {
         
          String Username = model.getValueAt(index, 0).toString();
          String Password = model.getValueAt(index, 1).toString();
-         String Nama = model.getValueAt(index, 2).toString();
-         String Gender = model.getValueAt(index, 3).toString();
-         String NoTelp = model.getValueAt(index, 4).toString();
-         String Jabatan = model.getValueAt(index, 5).toString();
-         String Alamat = model.getValueAt(index, 6).toString();
+         String Email = model.getValueAt(index, 2).toString();
+         String Nama = model.getValueAt(index, 3).toString();
+         String Gender = model.getValueAt(index, 4).toString();
+         String NoTelp = model.getValueAt(index, 5).toString();
+         String Jabatan = model.getValueAt(index, 6).toString();
+         String Alamat = model.getValueAt(index, 7).toString();
+         String IDNumber = model.getValueAt(index, 8).toString();
 
 
          k.setVisible(true);
@@ -252,11 +256,13 @@ public class DataKaryawan extends javax.swing.JPanel {
          
          k.txt_username.setText(Username);
          k.pass.setText(Password);
+         k.txt_email.setText(Email);
          k.txt_nama.setText(Nama);
          k.jComb_gender.setSelectedItem(Gender);
          k.txt_telp.setText(NoTelp);
          k.jComb_jabatan.setSelectedItem(Jabatan);
          k.txt_alamat.setText(Alamat);
+         k.txt_barcode.setText(IDNumber);
     }//GEN-LAST:event_fbutton1ActionPerformed
 
     private void hapus_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapus_buttonActionPerformed

@@ -58,6 +58,8 @@ public class editk extends javax.swing.JFrame {
             jLabel13.setFont(font3);
             jLabel14.setFont(font3);
             jLabel15.setFont(font3);
+            jLabel16.setFont(font3);
+            txt_email.setFont(font3);
             pass.setFont(font3);
             jCpass.setFont(font3);
             jComb_gender.setFont(font3);
@@ -70,11 +72,13 @@ public class editk extends javax.swing.JFrame {
     DefaultTableModel tbl = new DefaultTableModel();
         tbl.addColumn("Username");
         tbl.addColumn("Password");
+        tbl.addColumn("Email");
         tbl.addColumn("Nama");
         tbl.addColumn("Gender");
         tbl.addColumn("No Telepon");
         tbl.addColumn("Jabatan");
         tbl.addColumn("Alamat");
+        tbl.addColumn("ID Number");
         //DataKaryawan.karyawan.setModel(tbl);
         //DataKaryawan.karyawan.getTableHeader().setBackground(new Color(115,206,191));
         //DataKaryawan.karyawan.getTableHeader().setForeground(new Color(255,255,255));
@@ -85,11 +89,13 @@ public class editk extends javax.swing.JFrame {
                 tbl.addRow(new Object[] {
                 rs.getString("username"),
                 rs.getString("password"),
+                rs.getString("email"),
                 rs.getString("nama_karyawan"),
                 rs.getString("jenis_kelamin"),
                 rs.getString("no_hp"),
                 rs.getString("jabatan"),
-                rs.getString("alamat")
+                rs.getString("alamat"),
+                rs.getString("barcodenumber")
                 });
             } 
             st.close();
@@ -131,6 +137,13 @@ public class editk extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         batal = new javax.swing.JButton();
         simpan = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        txt_email = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
+        jLabel17 = new javax.swing.JLabel();
+        txt_barcode = new javax.swing.JTextField();
+        jSeparator8 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -147,7 +160,7 @@ public class editk extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel9.setText("Username");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 68, 70, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 70, -1));
 
         txt_username.setBackground(new java.awt.Color(222, 254, 255));
         txt_username.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
@@ -157,15 +170,15 @@ public class editk extends javax.swing.JFrame {
                 txt_usernameActionPerformed(evt);
             }
         });
-        jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 70, 165, -1));
+        jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 165, -1));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel10.setText("Password");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 102, 70, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 70, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel11.setText("Nama");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 161, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
 
         txt_nama.setBackground(new java.awt.Color(222, 254, 255));
         txt_nama.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
@@ -175,11 +188,11 @@ public class editk extends javax.swing.JFrame {
                 txt_namaActionPerformed(evt);
             }
         });
-        jPanel1.add(txt_nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 163, 165, -1));
+        jPanel1.add(txt_nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 165, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel12.setText("Gender");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 195, 50, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 50, -1));
 
         txt_telp.setBackground(new java.awt.Color(222, 254, 255));
         txt_telp.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
@@ -189,19 +202,19 @@ public class editk extends javax.swing.JFrame {
                 txt_telpActionPerformed(evt);
             }
         });
-        jPanel1.add(txt_telp, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 165, -1));
+        jPanel1.add(txt_telp, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 165, -1));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel13.setText("No Hp");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 230, 50, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 50, -1));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel14.setText("Jabatan");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 261, 50, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 50, -1));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel15.setText("Alamat");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 296, 50, -1));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 50, -1));
 
         jComb_gender.setBackground(new java.awt.Color(222, 254, 255));
         jComb_gender.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
@@ -212,7 +225,7 @@ public class editk extends javax.swing.JFrame {
                 jComb_genderActionPerformed(evt);
             }
         });
-        jPanel1.add(jComb_gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, -1));
+        jPanel1.add(jComb_gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
 
         txt_alamat.setBackground(new java.awt.Color(222, 254, 255));
         txt_alamat.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
@@ -222,7 +235,7 @@ public class editk extends javax.swing.JFrame {
                 txt_alamatActionPerformed(evt);
             }
         });
-        jPanel1.add(txt_alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 165, -1));
+        jPanel1.add(txt_alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 165, -1));
 
         jComb_jabatan.setBackground(new java.awt.Color(222, 254, 255));
         jComb_jabatan.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
@@ -233,7 +246,7 @@ public class editk extends javax.swing.JFrame {
                 jComb_jabatanActionPerformed(evt);
             }
         });
-        jPanel1.add(jComb_jabatan, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
+        jPanel1.add(jComb_jabatan, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, -1, -1));
 
         pass.setBackground(new java.awt.Color(222, 254, 255));
         pass.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
@@ -243,7 +256,7 @@ public class editk extends javax.swing.JFrame {
                 passActionPerformed(evt);
             }
         });
-        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 104, 165, -1));
+        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 165, -1));
 
         jCpass.setBackground(new java.awt.Color(222, 254, 255));
         jCpass.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
@@ -253,22 +266,22 @@ public class editk extends javax.swing.JFrame {
                 jCpassActionPerformed(evt);
             }
         });
-        jPanel1.add(jCpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 136, -1, -1));
+        jPanel1.add(jCpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, -1));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 165, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 165, 10));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 165, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 165, 10));
 
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 179, 165, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 165, 10));
 
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 121, 165, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 165, 10));
 
         jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 88, 165, 10));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 165, 10));
 
         batal.setBackground(new java.awt.Color(0, 167, 157));
         batal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -280,7 +293,7 @@ public class editk extends javax.swing.JFrame {
                 batalActionPerformed(evt);
             }
         });
-        jPanel1.add(batal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 98, 41));
+        jPanel1.add(batal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 98, 41));
 
         simpan.setBackground(new java.awt.Color(0, 167, 157));
         simpan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -292,9 +305,46 @@ public class editk extends javax.swing.JFrame {
                 simpanActionPerformed(evt);
             }
         });
-        jPanel1.add(simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 100, 40));
+        jPanel1.add(simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 100, 40));
 
-        background1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 400));
+        jLabel16.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
+        jLabel16.setText("Email");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+
+        txt_email.setBackground(new java.awt.Color(222, 254, 255));
+        txt_email.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
+        txt_email.setBorder(null);
+        txt_email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_emailActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txt_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 165, -1));
+
+        jSeparator6.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 165, 10));
+
+        jSeparator7.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 165, 10));
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
+        jLabel17.setText("ID Number");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 80, -1));
+
+        txt_barcode.setBackground(new java.awt.Color(222, 254, 255));
+        txt_barcode.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
+        txt_barcode.setBorder(null);
+        txt_barcode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_barcodeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txt_barcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 165, -1));
+
+        jSeparator8.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 165, 10));
+
+        background1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 480));
 
         javax.swing.GroupLayout OuterLayout = new javax.swing.GroupLayout(Outer);
         Outer.setLayout(OuterLayout);
@@ -375,9 +425,9 @@ public class editk extends javax.swing.JFrame {
         } else {
             try {
                 Statement st = konek.GetConnection().createStatement();
-                st.executeUpdate("UPDATE data_karyawan SET username='"+txt_username.getText()+"',password='"+pass.getText()
-                    +"',nama_karyawan='"+txt_nama.getText()+"',jenis_kelamin='"+jComb_gender.getSelectedItem()+"',no_hp='"+txt_telp.getText()
-                    +"',jabatan='"+jComb_jabatan.getSelectedItem()+"',alamat='"+txt_alamat.getText()+"' WHERE username = '"+txt_username.getText()
+                st.executeUpdate("UPDATE data_karyawan SET username='"+txt_username.getText()+"',password='"+pass.getText()+"',"
+                        + "nama_karyawan='"+txt_nama.getText()+"',email='"+txt_email.getText()+"',jenis_kelamin='"+jComb_gender.getSelectedItem()+"',no_hp='"+txt_telp.getText()
+                    +"',jabatan='"+jComb_jabatan.getSelectedItem()+"',alamat='"+txt_alamat.getText()+"', barcodenumber='"+txt_barcode.getText()+"' WHERE username = '"+txt_username.getText()
                     +"' OR nama_karyawan='"+txt_nama.getText()+"';");
                 JOptionPane.showMessageDialog(null, "Data berhasil diubah");
                 tabelkaryawan();
@@ -398,6 +448,14 @@ public class editk extends javax.swing.JFrame {
     private void jComb_genderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComb_genderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComb_genderActionPerformed
+
+    private void txt_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_emailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_emailActionPerformed
+
+    private void txt_barcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_barcodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_barcodeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -455,6 +513,8 @@ public class editk extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
@@ -462,9 +522,14 @@ public class editk extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
     public javax.swing.JPasswordField pass;
     private javax.swing.JButton simpan;
     public javax.swing.JTextField txt_alamat;
+    public javax.swing.JTextField txt_barcode;
+    public javax.swing.JTextField txt_email;
     public javax.swing.JTextField txt_nama;
     public javax.swing.JTextField txt_telp;
     public javax.swing.JTextField txt_username;
