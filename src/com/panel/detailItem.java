@@ -3,9 +3,11 @@ package com.panel;
 import com.swing.modelDetail;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.io.File;
 import java.text.DecimalFormat;
 
 public class detailItem extends javax.swing.JPanel {
@@ -14,6 +16,7 @@ public class detailItem extends javax.swing.JPanel {
         initComponents();
         setOpaque(false);
         setCursor(new Cursor(Cursor.HAND_CURSOR));
+        font();
     }
 
     public modelDetail getDetail() {
@@ -40,6 +43,18 @@ public class detailItem extends javax.swing.JPanel {
         g2.dispose();
         super.paint(graph);
     }
+    public void font(){
+        try {
+            File fontStyle  = new File("src/com/font/Louis George Cafe Bold.ttf");
+            Font font = Font.createFont(Font.TRUETYPE_FONT, fontStyle).deriveFont(10f);
+            name.setFont(font);
+            qty.setFont(font);
+            price.setFont(font);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

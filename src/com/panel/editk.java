@@ -32,15 +32,36 @@ public class editk extends javax.swing.JFrame {
     public editk() {
         initComponents();
         setBackground(new Color(0, 0, 0, 0));
+        font();
         //close1.event(this, background1);
     }
 
     public void font(){
         try {
-            File fontStyle  = new File("src/com/font/Louis George Cafe.ttf");
-            Font font = Font.createFont(Font.TRUETYPE_FONT, fontStyle).deriveFont(16f);
-            simpan.setFont(font);
-            batal.setFont(font);
+            File fontStyle  = new File("src/com/font/Louis George Cafe Bold.ttf");
+            File fontStyle2  = new File("src/com/font/Louis George Cafe.ttf");
+            File fontStyle3  = new File("src/com/font/Louis George Cafe.ttf");
+            Font font = Font.createFont(Font.TRUETYPE_FONT, fontStyle).deriveFont(25f);
+            Font font2 = Font.createFont(Font.TRUETYPE_FONT, fontStyle2).deriveFont(16f);
+            Font font3 = Font.createFont(Font.TRUETYPE_FONT, fontStyle3).deriveFont(12f);
+            jLabel1.setFont(font);
+            simpan.setFont(font2);
+            batal.setFont(font2);
+            jLabel9.setFont(font3);
+            txt_username.setFont(font3);
+            jLabel10.setFont(font3);
+            txt_nama.setFont(font3);
+            jLabel11.setFont(font3);
+            txt_telp.setFont(font3);
+            jLabel12.setFont(font3);
+            txt_alamat.setFont(font3);
+            jLabel13.setFont(font3);
+            jLabel14.setFont(font3);
+            jLabel15.setFont(font3);
+            pass.setFont(font3);
+            jCpass.setFont(font3);
+            jComb_gender.setFont(font3);
+            jComb_jabatan.setFont(font3);
         } catch (Exception e) {
             e.getMessage();
         }
@@ -126,7 +147,7 @@ public class editk extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel9.setText("Username");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 68, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 68, 70, -1));
 
         txt_username.setBackground(new java.awt.Color(222, 254, 255));
         txt_username.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
@@ -140,7 +161,7 @@ public class editk extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel10.setText("Password");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 102, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 102, 70, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel11.setText("Nama");
@@ -158,7 +179,7 @@ public class editk extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel12.setText("Gender");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 195, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 195, 50, -1));
 
         txt_telp.setBackground(new java.awt.Color(222, 254, 255));
         txt_telp.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
@@ -172,19 +193,26 @@ public class editk extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel13.setText("No Hp");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 230, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 230, 50, -1));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel14.setText("Jabatan");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 261, -1, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 261, 50, -1));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
         jLabel15.setText("Alamat");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 296, -1, -1));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 296, 50, -1));
 
+        jComb_gender.setBackground(new java.awt.Color(222, 254, 255));
         jComb_gender.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
         jComb_gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-Laki", "Perempuan" }));
-        jPanel1.add(jComb_gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, -1, -1));
+        jComb_gender.setEnabled(false);
+        jComb_gender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComb_genderActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jComb_gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, -1));
 
         txt_alamat.setBackground(new java.awt.Color(222, 254, 255));
         txt_alamat.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
@@ -196,8 +224,10 @@ public class editk extends javax.swing.JFrame {
         });
         jPanel1.add(txt_alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 165, -1));
 
+        jComb_jabatan.setBackground(new java.awt.Color(222, 254, 255));
         jComb_jabatan.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
         jComb_jabatan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Kasir" }));
+        jComb_jabatan.setEnabled(false);
         jComb_jabatan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComb_jabatanActionPerformed(evt);
@@ -215,6 +245,7 @@ public class editk extends javax.swing.JFrame {
         });
         jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 104, 165, -1));
 
+        jCpass.setBackground(new java.awt.Color(222, 254, 255));
         jCpass.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
         jCpass.setText("Tampilkan Password");
         jCpass.addActionListener(new java.awt.event.ActionListener() {
@@ -263,7 +294,7 @@ public class editk extends javax.swing.JFrame {
         });
         jPanel1.add(simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 100, 40));
 
-        background1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 400));
+        background1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 400));
 
         javax.swing.GroupLayout OuterLayout = new javax.swing.GroupLayout(Outer);
         Outer.setLayout(OuterLayout);
@@ -327,7 +358,7 @@ public class editk extends javax.swing.JFrame {
         pass.setEchoChar((char)0);
     }
     else{
-        pass.setEchoChar('*');
+        pass.setEchoChar('•');
     }
      
     }//GEN-LAST:event_jCpassActionPerformed
@@ -353,8 +384,9 @@ public class editk extends javax.swing.JFrame {
                 this.dispose();
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Data gagal diubah");
-                this.dispose();
             }
+            dispose();
+            tabelkaryawan();
         }
     }//GEN-LAST:event_simpanActionPerformed
 
@@ -362,6 +394,10 @@ public class editk extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_batalActionPerformed
+
+    private void jComb_genderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComb_genderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComb_genderActionPerformed
 
     /**
      * @param args the command line arguments

@@ -2,6 +2,8 @@ package com.panel;
 
 
 import java.awt.Color;
+import java.awt.Font;
+import java.io.File;
 import koneksi.konek;
 import java.sql.Statement;
 import java.sql.DriverManager;
@@ -23,6 +25,7 @@ public class PasswordBaru extends javax.swing.JFrame {
         this.username = username;
         this.recoveryCode = recoveryCode;
         initComponents();
+        font();
     }
     private void updatePassword(String username, String newPassword) {
     try {
@@ -41,6 +44,20 @@ public class PasswordBaru extends javax.swing.JFrame {
     }
 }
 
+    public void font(){
+        try {
+            File fontStyle1  = new File("src/com/font/Louis George Cafe.ttf");           
+            Font font = Font.createFont(Font.TRUETYPE_FONT, fontStyle1).deriveFont(16f);
+            jLabel1.setFont(font);
+            jLabel2.setFont(font);
+            jLabel3.setFont(font);
+            kode_otp.setFont(font);
+            passwordBaru.setFont(font);
+            konfirmPasswordbaru.setFont(font);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+    }
 
   
     @SuppressWarnings("unchecked")

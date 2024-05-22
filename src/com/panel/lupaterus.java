@@ -2,7 +2,9 @@ package com.panel;
 
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.Arrays;
@@ -103,6 +105,22 @@ public class lupaterus extends javax.swing.JFrame {
     private boolean FormatEmail(String email) {
         String cekValidEmail = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         return email.matches(cekValidEmail);
+    }
+    
+    public void font(){
+        try {
+            File fontStyle1  = new File("src/com/font/Louis George Cafe.ttf"); 
+            File fontStyle2  = new File("src/com/font/Louis George Cafe Bold.ttf");
+            Font font = Font.createFont(Font.TRUETYPE_FONT, fontStyle1).deriveFont(16f);
+            Font font2 = Font.createFont(Font.TRUETYPE_FONT, fontStyle2).deriveFont(16f);
+            jLabel1.setFont(font);
+            jLabel3.setFont(font);
+            username_txt.setFont(font);
+            email_txt.setFont(font);
+            jLabel4.setFont(font2);
+        } catch (Exception e) {
+            e.getMessage();
+        }
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

@@ -156,7 +156,7 @@ public class DataKaryawan extends javax.swing.JPanel {
 
         body.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         body.setForeground(new java.awt.Color(0, 153, 153));
-        body.setText("Daftar makanan & minuman");
+        body.setText("Daftar karyawan Warung Lalapan 8");
 
         title.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         title.setForeground(new java.awt.Color(0, 153, 153));

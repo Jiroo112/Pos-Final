@@ -116,7 +116,6 @@ public class Detail_transaksi extends javax.swing.JFrame {
         option2 = new javax.swing.JRadioButton();
         fbutton1 = new com.button.Fbutton();
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Jumlah Pesanan :");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -124,23 +123,19 @@ public class Detail_transaksi extends javax.swing.JFrame {
 
         pictureBox1.setImage(new javax.swing.ImageIcon(getClass().getResource("/com/picture/RawLogo.png"))); // NOI18N
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Jumlah Pesanan :");
 
-        jumlahtxt.setBackground(new java.awt.Color(255, 255, 255));
-        jumlahtxt.setForeground(new java.awt.Color(0, 0, 0));
         jumlahtxt.setBorder(null);
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Layanan");
 
+        option1.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(option1);
-        option1.setForeground(new java.awt.Color(0, 0, 0));
         option1.setText("Dine-in");
 
+        option2.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(option2);
-        option2.setForeground(new java.awt.Color(0, 0, 0));
-        option2.setText("Take-way");
+        option2.setText("Take-away");
         option2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 option2ActionPerformed(evt);
@@ -164,16 +159,12 @@ public class Detail_transaksi extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(close1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(background21Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(pictureBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(background21Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
                         .addGroup(background21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(background21Layout.createSequentialGroup()
-                                .addComponent(option1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                                .addComponent(option2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(40, 40, 40)
+                                .addComponent(pictureBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(background21Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
                                 .addGroup(background21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jumlahtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,8 +172,12 @@ public class Detail_transaksi extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addGroup(background21Layout.createSequentialGroup()
                                         .addGap(58, 58, 58)
-                                        .addComponent(fbutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                        .addComponent(fbutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(background21Layout.createSequentialGroup()
+                                        .addComponent(option1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(option2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 18, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         background21Layout.setVerticalGroup(

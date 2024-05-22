@@ -23,7 +23,7 @@ public class scanrfid extends javax.swing.JFrame {
         kr = new Karyawan();
         id.requestFocusInWindow();
         jSeparator1.setForeground(Color.BLACK);
-        close1.event(ad, background21);
+        close1.event(this, background21);
     }
     
     public void font(){

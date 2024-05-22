@@ -43,6 +43,12 @@ public class data_menu extends javax.swing.JPanel {
             title.setFont(font);
             body.setFont(font2);
             detail.setFont(font);
+            itemId.setFont(font3);
+            itemId1.setFont(font3);
+            itemId2.setFont(font3);
+            itemKode.setFont(font3);
+            itemName.setFont(font3);
+            itemName1.setFont(font3);
             fbutton1.setFont(font3);
             fbutton2.setFont(font3);
         } catch (Exception e) {
@@ -193,8 +199,6 @@ public class data_menu extends javax.swing.JPanel {
 
         panelShadow1.setBackground(new java.awt.Color(255, 255, 255));
 
-        tabel1.setBackground(new java.awt.Color(255, 255, 255));
-        tabel1.setForeground(new java.awt.Color(0, 0, 0));
         tabel1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -261,7 +265,7 @@ public class data_menu extends javax.swing.JPanel {
 
         itemId2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         itemId2.setForeground(new java.awt.Color(51, 51, 51));
-        itemId2.setText("Stok");
+        itemId2.setText("Stok :");
 
         pictureBox1.setImage(new javax.swing.ImageIcon(getClass().getResource("/com/picture/minusIcon.png"))); // NOI18N
         pictureBox1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -319,13 +323,16 @@ public class data_menu extends javax.swing.JPanel {
                 .addGroup(panelShadow2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panelShadow2Layout.createSequentialGroup()
                         .addGroup(panelShadow2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(itemId)
-                            .addComponent(itemId1)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(itemId2)
                             .addComponent(itemKode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(itemName, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelShadow2Layout.createSequentialGroup()
+                                .addGroup(panelShadow2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(itemId1)
+                                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(itemName, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(itemId, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(itemId2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(38, 38, 38)
                         .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelShadow2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -173,6 +173,9 @@
                   <Color blue="b2" green="b2" red="7a" type="rgb"/>
                 </Property>
                 <Property name="dateFormat" type="java.lang.String" value="yyyy-MM-dd"/>
+                <Property name="textRefernce" type="javax.swing.JTextField" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="date2"/>
+                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

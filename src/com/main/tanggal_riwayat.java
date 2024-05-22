@@ -44,6 +44,7 @@ public class tanggal_riwayat extends javax.swing.JFrame {
      */
     public tanggal_riwayat() {
         initComponents();
+        
 
 //        close1.event(this,background1,Outter);
         dateChooser1.addEventDateChooser(new EventDateChooser() {
@@ -83,6 +84,7 @@ public class tanggal_riwayat extends javax.swing.JFrame {
         }
                 
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -211,7 +213,7 @@ public class tanggal_riwayat extends javax.swing.JFrame {
         body.setText("Pilih Tanggal Sesuai dengan Data yang Ingin Anda Cari");
         background1.add(body, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 330, 30));
 
-        shape1.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 590, 460));
+        shape1.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 610, 460));
 
         jPanel1.add(shape1, java.awt.BorderLayout.CENTER);
 

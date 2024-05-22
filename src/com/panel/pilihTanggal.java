@@ -214,6 +214,7 @@ public double transaksi() throws ParseException {
 
         dateChooser2.setForeground(new java.awt.Color(122, 178, 178));
         dateChooser2.setDateFormat("yyyy-MM-dd");
+        dateChooser2.setTextRefernce(date2);
         background1.add(dateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, -1, -1));
 
         shape3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

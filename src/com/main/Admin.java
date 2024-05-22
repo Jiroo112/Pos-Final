@@ -287,6 +287,9 @@ public class Admin extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         belanja_harian.usr();
+        daker.tabelkaryawan();
+        damen.makanan();
+        damen.minuman();
     }//GEN-LAST:event_formWindowActivated
 
     private void pictureBox2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pictureBox2MouseClicked

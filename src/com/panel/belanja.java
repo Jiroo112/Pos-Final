@@ -25,6 +25,7 @@ import com.raven.datechooser.SelectedAction;
 import com.raven.datechooser.SelectedDate;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.io.File;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.logging.Level;
@@ -51,6 +52,7 @@ public class belanja extends javax.swing.JPanel {
         usr();
         setTableAction();
         TableHeader();
+        font();
     
         //getContentPane().setBackground(new Color(240, 240, 240));
         dateChooser1.addEventDateChooser(new EventDateChooser() {
@@ -62,9 +64,7 @@ public class belanja extends javax.swing.JPanel {
                 }} 
         });
     }
-    
-        
-    
+
         private String nama;
         public void setNama(String usr){
         String strnama = usr;
@@ -197,6 +197,29 @@ public class belanja extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(rootPane, "salah"); 
       }
             }
+            
+    public void font(){
+        try {
+            File fontStyle  = new File("src/com/font/Louis George Cafe Bold Italic.ttf");
+            File fontStyle2  = new File("src/com/font/Louis George Cafe.ttf");
+            File fontStyle3  = new File("src/com/font/Louis George Cafe Bold.ttf");
+            Font font = Font.createFont(Font.TRUETYPE_FONT, fontStyle).deriveFont(36f);
+            Font font2 = Font.createFont(Font.TRUETYPE_FONT, fontStyle2).deriveFont(12f);
+            Font font3 = Font.createFont(Font.TRUETYPE_FONT, fontStyle3).deriveFont(12f);
+            title.setFont(font);
+            jLabel1.setFont(font2);
+            jLabel2.setFont(font2);
+            jLabel3.setFont(font2);
+            jLabel4.setFont(font2);
+            invoice.setFont(font2);
+            txtDate1.setFont(font2);
+            UangBelanja.setFont(font2);
+            Keterangan.setFont(font2);
+            username.setFont(font3);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -283,7 +306,7 @@ public class belanja extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Kode Belanja");
-        shape51.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 140, -1));
+        shape51.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 140, -1));
 
         invoice.setBackground(new java.awt.Color(238, 247, 255));
         invoice.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -301,7 +324,7 @@ public class belanja extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Tanggal");
-        shape51.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 153, -1));
+        shape51.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 153, -1));
 
         txtDate1.setBackground(new java.awt.Color(238, 247, 255));
         shape51.add(txtDate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 140, 40));
@@ -309,7 +332,7 @@ public class belanja extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Uang Belanja");
-        shape51.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 135, -1));
+        shape51.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 135, -1));
 
         UangBelanja.setBackground(new java.awt.Color(238, 247, 255));
         UangBelanja.addActionListener(new java.awt.event.ActionListener() {
@@ -322,7 +345,7 @@ public class belanja extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Keterangan");
-        shape51.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 30, 310, -1));
+        shape51.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, 310, -1));
 
         Keterangan.setBackground(new java.awt.Color(238, 247, 255));
         Keterangan.addActionListener(new java.awt.event.ActionListener() {

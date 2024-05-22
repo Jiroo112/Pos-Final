@@ -13,6 +13,8 @@ import com.raven.datechooser.EventDateChooser;
 import com.raven.datechooser.SelectedAction;
 import com.raven.datechooser.SelectedDate;
 import java.awt.Color;
+import java.awt.Font;
+import java.io.File;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -33,6 +35,7 @@ public class editBelanja extends javax.swing.JFrame {
      */
     public editBelanja() {
         initComponents();
+        font();
         getContentPane().setBackground(new Color(240, 240, 240));
         dateChooser2.addEventDateChooser(new EventDateChooser() {
             @Override
@@ -70,6 +73,29 @@ public class editBelanja extends javax.swing.JFrame {
       }
             }
 
+    public void font(){
+        try {
+            File fontStyle  = new File("src/com/font/Louis George Cafe Bold.ttf");
+            File fontStyle2  = new File("src/com/font/Louis George Cafe.ttf");
+            File fontStyle3  = new File("src/com/font/Louis George Cafe.ttf");
+            Font font = Font.createFont(Font.TRUETYPE_FONT, fontStyle).deriveFont(25f);
+            Font font2 = Font.createFont(Font.TRUETYPE_FONT, fontStyle2).deriveFont(16f);
+            Font font3 = Font.createFont(Font.TRUETYPE_FONT, fontStyle3).deriveFont(12f);
+            body.setFont(font);
+            simpan.setFont(font2);
+            batal.setFont(font2);
+            jLabel1.setFont(font3);
+            txt_editkode.setFont(font3);
+            jLabel2.setFont(font3);
+            txt_edittanggal.setFont(font3);
+            jLabel3.setFont(font3);
+            txt_edituang.setFont(font3);
+            jLabel4.setFont(font3);
+            txt_editketerangan.setFont(font3);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -82,10 +108,6 @@ public class editBelanja extends javax.swing.JFrame {
         dateChooser2 = new com.raven.datechooser.DateChooser();
         jPanel1 = new javax.swing.JPanel();
         background2 = new com.swing.background();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         simpan = new javax.swing.JButton();
         batal = new javax.swing.JButton();
         shape51 = new com.swing.Shape5();
@@ -99,7 +121,11 @@ public class editBelanja extends javax.swing.JFrame {
         background1 = new com.swing.background();
         shape1 = new com.swing.Shape();
         background3 = new com.swing.background();
-        jLabel5 = new javax.swing.JLabel();
+        body = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         dateChooser2.setForeground(new java.awt.Color(0, 167, 157));
         dateChooser2.setDateFormat("yyyy-MM-dd");
@@ -113,22 +139,6 @@ public class editBelanja extends javax.swing.JFrame {
 
         background2.setBackground(new java.awt.Color(255, 255, 255));
         background2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("Keterangan");
-        background2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("Kode Belanja");
-        background2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setText("Tanggal");
-        background2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setText("Uang Belanja");
-        background2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
         simpan.setBackground(new java.awt.Color(0, 167, 157));
         simpan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -249,10 +259,22 @@ public class editBelanja extends javax.swing.JFrame {
 
         shape1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Edit Belanja");
+        body.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        body.setForeground(new java.awt.Color(0, 153, 153));
+        body.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        body.setText("Edit Belanja");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Kode Belanja");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setText("Tanggal");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setText("Uang Belanja");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setText("Keterangan");
 
         javax.swing.GroupLayout background3Layout = new javax.swing.GroupLayout(background3);
         background3.setLayout(background3Layout);
@@ -260,14 +282,30 @@ public class editBelanja extends javax.swing.JFrame {
             background3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE))
+                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE))
+            .addGroup(background3Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(background3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         background3Layout.setVerticalGroup(
             background3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(background3Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(jLabel5)
-                .addContainerGap(326, Short.MAX_VALUE))
+                .addComponent(body)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel2)
+                .addGap(43, 43, 43)
+                .addComponent(jLabel3)
+                .addGap(33, 33, 33)
+                .addComponent(jLabel4)
+                .addGap(53, 53, 53)
+                .addComponent(jLabel1)
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         shape1.add(background3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 360, 380));
@@ -362,12 +400,12 @@ public class editBelanja extends javax.swing.JFrame {
     private com.swing.background background2;
     private com.swing.background background3;
     private javax.swing.JButton batal;
+    private javax.swing.JLabel body;
     private com.raven.datechooser.DateChooser dateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private com.swing.Shape shape1;
     public com.swing.Shape5 shape51;
