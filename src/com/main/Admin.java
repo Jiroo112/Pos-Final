@@ -26,7 +26,7 @@ public class Admin extends javax.swing.JFrame {
 
     private data_menu damen;
     private Keuntungan keuntungan;
-   // private GrafikBaru grafik;
+    private GrafikBaru grafik;
     private editt edit;
     private tambahmenu tambah;
     private Greeting greet;
@@ -42,7 +42,7 @@ public class Admin extends javax.swing.JFrame {
   public void init(){
        damen = new data_menu();
        keuntungan = new Keuntungan();
-       //grafik = new GrafikBaru();
+       grafik = new GrafikBaru();
        edit = new editt();
        tambah = new tambahmenu();
        greet = new Greeting();
@@ -321,8 +321,7 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_pictureBox3MouseExited
 
     private void pictureBox4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pictureBox4MouseClicked
-        //showForm(grafik);
-        //grafik.updateChart();
+        showForm(grafik);
     }//GEN-LAST:event_pictureBox4MouseClicked
 
     private void pictureBox4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pictureBox4MouseEntered

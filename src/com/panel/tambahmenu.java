@@ -59,7 +59,7 @@ String path2 = null;
             jLabel3.setFont(font2);
             txt_nama.setFont(font2);
             jLabel7.setFont(font2);
-            txt_harga.setFont(font2);
+            txt_Deskripsi.setFont(font2);
             jLabel1.setFont(font2);
             txt_stok.setFont(font2);
             jCheckBox1.setFont(font2);
@@ -86,7 +86,7 @@ String path2 = null;
         txt_nama = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
-        txt_harga = new javax.swing.JTextField();
+        txt_Deskripsi = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         txt_stok = new javax.swing.JSpinner();
@@ -94,6 +94,9 @@ String path2 = null;
         jCheckBox2 = new javax.swing.JCheckBox();
         btn_simpan = new javax.swing.JButton();
         btn_cancel = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        txt_harga = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -103,11 +106,9 @@ String path2 = null;
         jLabel6.setText("Tambah Menu");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Kode Menu :");
 
         txt_kode.setBackground(new java.awt.Color(222, 255, 254));
-        txt_kode.setForeground(new java.awt.Color(0, 0, 0));
         txt_kode.setBorder(null);
 
         filefoto.setBackground(new java.awt.Color(255, 255, 255));
@@ -121,7 +122,6 @@ String path2 = null;
             }
         });
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Nama :");
 
         txt_nama.setBackground(new java.awt.Color(222, 255, 254));
@@ -132,16 +132,13 @@ String path2 = null;
             }
         });
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Harga :");
 
-        txt_harga.setBackground(new java.awt.Color(222, 255, 254));
-        txt_harga.setBorder(null);
+        txt_Deskripsi.setBackground(new java.awt.Color(222, 255, 254));
+        txt_Deskripsi.setBorder(null);
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Stok :");
 
-        jCheckBox1.setForeground(new java.awt.Color(0, 0, 0));
         jCheckBox1.setText("Makanan");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,7 +146,6 @@ String path2 = null;
             }
         });
 
-        jCheckBox2.setForeground(new java.awt.Color(0, 0, 0));
         jCheckBox2.setText("Minuman");
         jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,6 +171,11 @@ String path2 = null;
             }
         });
 
+        jLabel8.setText("Deskripsi");
+
+        txt_harga.setBackground(new java.awt.Color(222, 255, 254));
+        txt_harga.setBorder(null);
+
         javax.swing.GroupLayout background1Layout = new javax.swing.GroupLayout(background1);
         background1.setLayout(background1Layout);
         background1Layout.setHorizontalGroup(
@@ -186,28 +187,30 @@ String path2 = null;
             .addGroup(background1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(background1Layout.createSequentialGroup()
-                        .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_stok, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-                            .addComponent(jLabel2)
-                            .addComponent(txt_kode)
-                            .addComponent(jSeparator1)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_nama)
-                            .addComponent(jSeparator2)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_harga)
-                            .addComponent(jSeparator3)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(filefoto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_pilih, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txt_stok, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(background1Layout.createSequentialGroup()
                         .addComponent(jCheckBox1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                        .addComponent(jCheckBox2))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txt_kode, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_nama, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txt_harga, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                        .addComponent(jSeparator4)
+                        .addComponent(txt_Deskripsi)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(filefoto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_pilih, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background1Layout.createSequentialGroup()
                         .addComponent(btn_cancel)
                         .addGap(18, 18, 18)
                         .addComponent(btn_simpan)))
@@ -218,14 +221,15 @@ String path2 = null;
             .addGroup(background1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
                 .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(background1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, background1Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
                         .addComponent(filefoto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_pilih, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(169, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(background1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_kode, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -239,21 +243,32 @@ String path2 = null;
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txt_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_stok, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jCheckBox2)
-                            .addComponent(btn_simpan)
-                            .addComponent(btn_cancel))
-                        .addGap(46, 46, 46))))
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_Deskripsi, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background1Layout.createSequentialGroup()
+                                .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btn_simpan)
+                                    .addComponent(btn_cancel))
+                                .addGap(46, 46, 46))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_stok, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jCheckBox1)
+                                    .addComponent(jCheckBox2))
+                                .addGap(20, 20, 20))))))
         );
 
         javax.swing.GroupLayout shape1Layout = new javax.swing.GroupLayout(shape1);
@@ -307,39 +322,42 @@ String path2 = null;
 
     private void btn_simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simpanActionPerformed
         // TODO add your handling code here:
-       
-        String n= txt_kode.getText();
-        String nama_menu = txt_nama.getText();
-        String harga = txt_harga.getText();
-        String stok = txt_stok.getValue().toString();
-        String sql = ("INSERT INTO menu (kode_menu, nama_menu, harga, gambar, stok)" + " VALUES (?,?,?,?,?)");
-        if (txt_nama.equals(nama_menu)) {
-            JOptionPane.showMessageDialog(null, "Menu Sudah Ada");
-        } else {
-        try {
-           Class.forName("com.mysql.cj.jdbc.Driver");
-           Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/aplikasi_warung", "root", "");
-           PreparedStatement pst = con.prepareStatement(sql);
-           pst.setString(1, n);
-           pst.setString(2, nama_menu);
-           pst.setString(3, harga);
-           pst.setString(5, stok);
-           InputStream is = new FileInputStream (new File(path2));
-           pst.setBlob(4, is);
-           pst.execute();
-           txt_kode.enable();
-           txt_kode.disable();
-           txt_nama.setText("");
-           txt_harga.setText("");
-           txt_stok.getValue().toString();
-           filefoto.setIcon(null); 
-           JOptionPane.showMessageDialog(null, "Menu Berhasil Ditambahkan");
-           this.setVisible(false);
-           new DataMenu().setVisible(true);
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Menu Gagal Ditambahkan");
-           }
-        }
+        
+       String n = txt_kode.getText();
+String nama_menu = txt_nama.getText();
+String harga = txt_harga.getText();
+String stok = txt_stok.getValue().toString();
+String deskripsi = txt_Deskripsi.getText(); // Add this line to get the description
+String sql = "INSERT INTO menu (kode_menu, nama_menu, harga, gambar, stok, deskripsi) VALUES (?,?,?,?,?,?)"; // Update SQL query
+if (txt_nama.equals(nama_menu)) {
+    JOptionPane.showMessageDialog(null, "Menu Sudah Ada");
+} else {
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/aplikasi_warung", "root", "");
+        PreparedStatement pst = con.prepareStatement(sql);
+        pst.setString(1, n);
+        pst.setString(2, nama_menu);
+        pst.setString(3, harga);
+        pst.setString(5, stok);
+        pst.setString(6, deskripsi); // Set the description parameter
+        InputStream is = new FileInputStream(new File(path2));
+        pst.setBlob(4, is);
+        pst.execute();
+        txt_kode.enable();
+        txt_kode.disable();
+        txt_nama.setText("");
+        txt_harga.setText("");
+        txt_stok.getValue().toString();
+        filefoto.setIcon(null);
+        txt_Deskripsi.setText(""); // Clear the description field after insertion
+        JOptionPane.showMessageDialog(null, "Menu Berhasil Ditambahkan");
+        this.setVisible(false);
+        new DataMenu().setVisible(true);
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, e);
+    }
+}
     }//GEN-LAST:event_btn_simpanActionPerformed
 
     private void btn_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelActionPerformed
@@ -447,11 +465,14 @@ String path2 = null;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSpinner jSpinner1;
     private com.swing.Shape shape1;
+    private javax.swing.JTextField txt_Deskripsi;
     private javax.swing.JTextField txt_harga;
     private javax.swing.JTextField txt_kode;
     private javax.swing.JTextField txt_nama;

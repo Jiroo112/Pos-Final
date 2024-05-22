@@ -135,7 +135,7 @@ public class lupaterus extends javax.swing.JFrame {
         email_txt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         kirimKode_txt = new javax.swing.JButton();
-        close1 = new com.button.Close();
+        batal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -181,7 +181,17 @@ public class lupaterus extends javax.swing.JFrame {
             }
         });
         background1.add(kirimKode_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 187, 80, 30));
-        background1.add(close1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, -1, 30));
+
+        batal.setBackground(new java.awt.Color(0, 167, 157));
+        batal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        batal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/picture/close_1.png"))); // NOI18N
+        batal.setBorder(null);
+        batal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                batalActionPerformed(evt);
+            }
+        });
+        background1.add(batal, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 10, 40, 30));
 
         javax.swing.GroupLayout OutterLayout = new javax.swing.GroupLayout(Outter);
         Outter.setLayout(OutterLayout);
@@ -196,7 +206,7 @@ public class lupaterus extends javax.swing.JFrame {
             OutterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(OutterLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(background1, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                .addComponent(background1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -282,6 +292,11 @@ public class lupaterus extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_username_txtActionPerformed
 
+    private void batalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batalActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_batalActionPerformed
+
     public static void main(String args[]) {
       
         try {
@@ -322,7 +337,7 @@ public class lupaterus extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.swing.Shape Outter;
     private com.swing.background background1;
-    private com.button.Close close1;
+    private javax.swing.JButton batal;
     private javax.swing.JTextField email_txt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
