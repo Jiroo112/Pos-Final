@@ -19,11 +19,12 @@ public class scanrfid extends javax.swing.JFrame {
         this.lg = login;
         initComponents();
         font();
+        id.requestFocusInWindow();
+        id.setForeground(Color.WHITE);
         ad = new Admin();
         kr = new Karyawan();
-        id.requestFocusInWindow();
         jSeparator1.setForeground(Color.BLACK);
-        close1.event(this, background21);
+        close1.event(this);
     }
     
     public void font(){
@@ -69,6 +70,7 @@ public class scanrfid extends javax.swing.JFrame {
 
         Outer = new com.swing.Shape();
         background21 = new com.swing.background2();
+        jPanel1 = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         close1 = new com.button.Close();
         body = new javax.swing.JLabel();
@@ -79,61 +81,33 @@ public class scanrfid extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        background21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        background21.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 210, 30));
+
         title.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         title.setText("Scan RFID");
+        background21.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 32, 181, -1));
+        background21.add(close1, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 6, -1, -1));
 
         body.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         body.setText("Mohon Tap Kartu Anda!");
+        background21.add(body, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 198, -1));
 
+        id.setForeground(new java.awt.Color(255, 255, 255));
         id.setBorder(null);
         id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idActionPerformed(evt);
             }
         });
+        background21.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 185, 30));
+        background21.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 185, 10));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/picture/rf.gif"))); // NOI18N
-
-        javax.swing.GroupLayout background21Layout = new javax.swing.GroupLayout(background21);
-        background21.setLayout(background21Layout);
-        background21Layout.setHorizontalGroup(
-            background21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(background21Layout.createSequentialGroup()
-                .addContainerGap(139, Short.MAX_VALUE)
-                .addGroup(background21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background21Layout.createSequentialGroup()
-                        .addComponent(close1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background21Layout.createSequentialGroup()
-                        .addGroup(background21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(background21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background21Layout.createSequentialGroup()
-                                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21)))
-                        .addGap(111, 111, 111))))
-        );
-        background21Layout.setVerticalGroup(
-            background21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(background21Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(close1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(title)
-                .addGap(26, 26, 26)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(body)
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
+        background21.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 216, 159));
 
         javax.swing.GroupLayout OuterLayout = new javax.swing.GroupLayout(Outer);
         Outer.setLayout(OuterLayout);
@@ -148,8 +122,8 @@ public class scanrfid extends javax.swing.JFrame {
             OuterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(OuterLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(background21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(background21, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -224,6 +198,7 @@ public class scanrfid extends javax.swing.JFrame {
     private com.button.Close close1;
     private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables

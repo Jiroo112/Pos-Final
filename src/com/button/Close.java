@@ -14,7 +14,7 @@ public class Close extends javax.swing.JPanel {
         setOpaque(false);
     }
     
-    public void event(JFrame frame, background2 panel){
+    public void event(JFrame frame){
         close.addActionListener(new  ActionListener() {
             @Override
             public void actionPerformed(ActionEvent close){

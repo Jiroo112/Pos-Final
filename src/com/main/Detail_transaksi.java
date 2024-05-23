@@ -33,7 +33,7 @@ public class Detail_transaksi extends javax.swing.JFrame {
         kode_transaksi();
         font();
         setBackground(new Color(0, 0, 0, 0));
-        close1.event(this,background21);
+        close1.event(this);
     }
     
     public void layanan(){

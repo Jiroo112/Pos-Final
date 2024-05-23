@@ -12,7 +12,7 @@ public class popUp_berhasil extends javax.swing.JFrame {
         initComponents();
         font();
         setBackground(new Color(0, 0, 0, 0));
-        close1.event(this, background21);
+        close1.event(this);
 
     }
     

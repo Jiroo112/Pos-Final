@@ -46,7 +46,7 @@ public class popupregist extends javax.swing.JFrame {
             nameField.setFont(font2);
             rfid.setFont(font2);
             usernameField1.setFont(font2);
-            emailField2.setFont(font2);
+            emailfield.setFont(font2);
             passwordField.setFont(font2);
             rePassField.setFont(font2);
             genderCombo1.setFont(font2);
@@ -93,7 +93,7 @@ public class popupregist extends javax.swing.JFrame {
         rfidfield = new javax.swing.JTextField();
         close = new com.swing.PictureBox();
         jLabel10 = new javax.swing.JLabel();
-        emailField2 = new javax.swing.JTextField();
+        emailfield = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -234,12 +234,12 @@ public class popupregist extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel10.setText("Email");
 
-        emailField2.setBackground(new java.awt.Color(0, 153, 153));
-        emailField2.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
-        emailField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 153, 255), 1, true));
-        emailField2.addActionListener(new java.awt.event.ActionListener() {
+        emailfield.setBackground(new java.awt.Color(0, 153, 153));
+        emailfield.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
+        emailfield.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 153, 255), 1, true));
+        emailfield.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailField2ActionPerformed(evt);
+                emailfieldActionPerformed(evt);
             }
         });
 
@@ -267,7 +267,7 @@ public class popupregist extends javax.swing.JFrame {
                                 .addGap(216, 216, 216))
                             .addGroup(background1Layout.createSequentialGroup()
                                 .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(emailField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(emailfield, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(usernameField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -277,7 +277,7 @@ public class popupregist extends javax.swing.JFrame {
                                     .addComponent(rePassField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jsimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)))
+                                .addGap(41, 41, 41)))
                         .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rfid, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(rfidfield, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -303,7 +303,7 @@ public class popupregist extends javax.swing.JFrame {
                     .addGroup(background1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(background1Layout.createSequentialGroup()
                                 .addGap(13, 13, 13)
                                 .addComponent(jLabel4)
@@ -316,7 +316,7 @@ public class popupregist extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(emailField2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(emailfield, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(13, 13, 13)
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -328,7 +328,7 @@ public class popupregist extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(rePassField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(30, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, background1Layout.createSequentialGroup()
+                            .addGroup(background1Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(genderCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -346,12 +346,14 @@ public class popupregist extends javax.swing.JFrame {
                                 .addComponent(alamatField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(rfid)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rfidfield, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
-                            .addGroup(background1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jsimpan))))))
+                                .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(background1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(rfidfield, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jsimpan)
+                                        .addGap(21, 21, 21))))))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -411,6 +413,7 @@ public class popupregist extends javax.swing.JFrame {
         String jabatan = jabatancom.getSelectedItem().toString();
         String username = usernameField1.getText();
         String password = passwordField.getText();
+        String email = emailfield.getText();
         String repassword = rePassField.getText();
         String no_hp = phoneField.getText();
         String jenis_kelamin = genderCombo1.getSelectedItem().toString();
@@ -432,16 +435,17 @@ public class popupregist extends javax.swing.JFrame {
                 connection = konek.GetConnection();
                 connection.setAutoCommit(false);
 
-                String sqlTabel1 = "INSERT INTO data_karyawan (username, password, nama_karyawan, jenis_kelamin, no_hp, jabatan, alamat, barcodenumber) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                String sqlTabel1 = "INSERT INTO data_karyawan (username, password, email, nama_karyawan, jenis_kelamin, no_hp, jabatan, alamat, barcodenumber) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 statementTabel1 = connection.prepareStatement(sqlTabel1);
                 statementTabel1.setString(1, username);
                 statementTabel1.setString(2, password);
-                statementTabel1.setString(3, nama_karyawan);
-                statementTabel1.setString(4, jenis_kelamin);
-                statementTabel1.setString(5, no_hp);
-                statementTabel1.setString(6, jabatan);
-                statementTabel1.setString(7, alamat);
-                statementTabel1.setString(8, rfid);
+                statementTabel1.setString(3, email);
+                statementTabel1.setString(4, nama_karyawan);
+                statementTabel1.setString(5, jenis_kelamin);
+                statementTabel1.setString(6, no_hp);
+                statementTabel1.setString(7, jabatan);
+                statementTabel1.setString(8, alamat);
+                statementTabel1.setString(9, rfid);
 
                 statementTabel1.executeUpdate();
 
@@ -452,6 +456,7 @@ public class popupregist extends javax.swing.JFrame {
                 usernameField1.setText("");
                 nameField.setText("");
                 jabatancom.setSelectedIndex(0);
+                emailfield.setText("");
                 phoneField.setText("");
                 passwordField.setText("");
                 rePassField.setText("");
@@ -492,9 +497,9 @@ public class popupregist extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_closeMouseExited
 
-    private void emailField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailField2ActionPerformed
+    private void emailfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailfieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailField2ActionPerformed
+    }//GEN-LAST:event_emailfieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -536,7 +541,7 @@ public class popupregist extends javax.swing.JFrame {
     private javax.swing.JTextField alamatField;
     private com.swing.background background1;
     private com.swing.PictureBox close;
-    private javax.swing.JTextField emailField2;
+    private javax.swing.JTextField emailfield;
     private javax.swing.JComboBox<String> genderCombo1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;

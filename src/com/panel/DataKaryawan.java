@@ -93,6 +93,7 @@ public class DataKaryawan extends javax.swing.JPanel {
                 rs.getString("alamat"),
                 rs.getString("barcodenumber")
                 });
+                karyawan.setModel(tbl);
             } 
             st.close();
         } catch (Exception e) {
@@ -295,7 +296,7 @@ public class DataKaryawan extends javax.swing.JPanel {
     private com.button.Fbutton fbutton3;
     private com.button.Fbutton hapus_button;
     private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JTable karyawan;
+    public javax.swing.JTable karyawan;
     private Shape.PanelShadow panelShadow1;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
