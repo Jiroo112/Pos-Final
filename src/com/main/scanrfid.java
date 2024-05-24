@@ -6,6 +6,7 @@ import java.io.File;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.text.Caret;
 import koneksi.konek;
 
 
@@ -21,6 +22,7 @@ public class scanrfid extends javax.swing.JFrame {
         font();
         id.requestFocusInWindow();
         id.setForeground(Color.WHITE);
+        id.setCaretColor(Color.white);
         ad = new Admin();
         kr = new Karyawan();
         jSeparator1.setForeground(Color.BLACK);

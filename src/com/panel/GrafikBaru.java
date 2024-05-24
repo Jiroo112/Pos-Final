@@ -8,6 +8,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import Shape.BarChartAnimator;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
@@ -26,6 +27,8 @@ import javax.swing.table.JTableHeader;
 import javax.swing.table.TableModel;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTarget;
 import org.jdesktop.animation.timing.TimingTargetAdapter;
@@ -38,13 +41,13 @@ public class GrafikBaru extends JPanel {
     private DefaultCategoryDataset dataset;
     private Date tanggalAwal;
     private Date tanggalAkhir;
-        private Animator animator;
+    private Animator animator;
     private float animate;
 
     public GrafikBaru() {
         initComponents();
+        font();
         setBackground(new Color(250, 250, 250));
-
         dataset = new DefaultCategoryDataset();
         chart = createBarChart();
         ChartPanel chartPanel = new ChartPanel(chart);
@@ -54,37 +57,74 @@ public class GrafikBaru extends JPanel {
         fillDataset();
 
         CategoryPlot plot = (CategoryPlot) chart.getPlot();
-        plot.setBackgroundPaint(Color.white);
+        plot.setBackgroundPaint(new Color (243, 241, 255));
+        chart.setBackgroundPaint(new Color(135, 226, 211));
+        chart.getTitle().setPaint(new Color(0, 153, 153));
+            try {
+                File fontStyle = new File("src/com/font/Louis George Cafe Bold Italic.ttf");
+                Font customFont = Font.createFont(Font.TRUETYPE_FONT, fontStyle).deriveFont(36f);
+                chart.getTitle().setFont(customFont);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         plot.setOutlinePaint(null);
         BarRenderer renderer = (BarRenderer) plot.getRenderer();
         renderer.setSeriesPaint(0, new Color(245, 189, 135)); //transaksi
         renderer.setSeriesPaint(1, new Color(135, 189, 245)); // belanja
         renderer.setSeriesPaint(2, new Color(189, 135, 245)); // keuntungan
 
-        // Implementasi animasi untuk setiap bar
         makanan();
         minuman();
         tampilkanTopSellerMakanan();
         tampilkanTopSellerMinuman();
                animateBars();
     }
-
-    private JFreeChart createBarChart() {
-        return ChartFactory.createBarChart(
-                "Penjualan dan Belanja Bulanan",
-                "Tanggal",
-                "Jumlah",
-                dataset,
-                PlotOrientation.VERTICAL,
-                true,
-                true,
-                false
-        );
+      public void font(){
+    try {
+        File fontStyle  = new File("src/com/font/Louis George Cafe Bold Italic.ttf");
+        File fontStyle2  = new File("src/com/font/Louis George Cafe Italic.ttf");
+        File fontStyle3  = new File("src/com/font/Louis George Cafe.ttf");
+        Font font = Font.createFont(Font.TRUETYPE_FONT, fontStyle).deriveFont(18f);
+//        Font font1 = Font.createFont(Font.TRUETYPE_FONT, fontStyle).deriveFont(36f);
+        Font font2 = Font.createFont(Font.TRUETYPE_FONT, fontStyle2).deriveFont(14f);
+        Font font3 = Font.createFont(Font.TRUETYPE_FONT, fontStyle3).deriveFont(12f);
+//        grafiklb.setFont(font1);
+        jLabel3.setFont(font);
+        jLabel4.setFont(font);
+        bestSeller3makanan1.setFont(font2);
+        bestSeller3minuman1.setFont(font2);
+    } catch (Exception e) {
+        e.getMessage();
     }
+}
+private JFreeChart createBarChart() {
+    JFreeChart barChart = ChartFactory.createBarChart(
+            "Penjualan dan Belanja Bulanan",
+            "Tanggal",
+            "Jumlah",
+            dataset,
+            PlotOrientation.VERTICAL,
+            true,
+            true,
+            false
+    );
+
+    CategoryPlot plot = barChart.getCategoryPlot();
+    plot.setBackgroundPaint(Color.white); 
+    plot.setOutlinePaint(null);
+
+    // Mengatur warna batang grafik
+    BarRenderer renderer = (BarRenderer) plot.getRenderer();
+    renderer.setSeriesPaint(0, new Color(245, 189, 135)); // Transaksi
+    renderer.setSeriesPaint(1, new Color(135, 189, 245)); // Belanja
+    renderer.setSeriesPaint(2, new Color(189, 135, 245)); // Keuntungan
+
+    return barChart;
+}
 
     private void fillDataset() {
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.MONTH, -40);
+        calendar.add(Calendar.MONTH, -1);
         Date startDate = calendar.getTime();
         Date endDate = new Date();
 
@@ -101,7 +141,6 @@ public class GrafikBaru extends JPanel {
             ResultSet rsTransaksi = psTransaksi.executeQuery();
             ResultSet rsBelanja = psBelanja.executeQuery();
 
-            ///get value
             double totalTransaksi = 0;
             double totalBelanja = 0;
 
@@ -150,7 +189,7 @@ public class GrafikBaru extends JPanel {
     }
         private Date getOneMonthAgoDate() {
                 Calendar calendar = Calendar.getInstance();
-                calendar.add(Calendar.MONTH, -40); 
+                calendar.add(Calendar.MONTH, -1); 
                 return calendar.getTime();
     }
     private void makanan() {
@@ -160,7 +199,7 @@ public class GrafikBaru extends JPanel {
         tblMakanan.addColumn("Stok Terjual/Bulan");
         makanan1.setModel(tblMakanan); 
         makanan1.getTableHeader().setBackground(new Color(115, 206, 191));
-        makanan1.getTableHeader().setForeground(new Color(0, 0, 0));
+        minuman1.getTableHeader().setForeground(Color.WHITE);
 
         try {
             Statement st = konek.GetConnection().createStatement();
@@ -169,7 +208,7 @@ public class GrafikBaru extends JPanel {
                     "LEFT JOIN detail_transaksi dt ON m.kode_menu = dt.kode_menu " +
                     "JOIN transaksi t ON dt.kode_transaksi = t.kode_transaksi " +
                     "WHERE m.kode_menu LIKE '%MA%' " +
-                    "AND t.tgl_transaksi >= DATE_SUB(CURDATE(), INTERVAL 40 MONTH) " +
+                    "AND t.tgl_transaksi >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH) " +
                     "GROUP BY m.nama_menu");
             while (rs.next()) {
                 String namaMenu = rs.getString("nama_menu");
@@ -192,7 +231,7 @@ public class GrafikBaru extends JPanel {
         tblMinuman.addColumn("StokTerjual/Bulan");
         minuman1.setModel(tblMinuman);
         minuman1.getTableHeader().setBackground(new Color(115,206,191));
-        minuman1.getTableHeader().setForeground(new Color(0,0,0));
+        minuman1.getTableHeader().setForeground(Color.WHITE);
         try {
             Statement st = konek.GetConnection().createStatement();
             ResultSet rs = st.executeQuery("SELECT m.nama_menu, m.harga, SUM(dt.jumlah) AS total_terjual " +
@@ -200,7 +239,7 @@ public class GrafikBaru extends JPanel {
                                            "LEFT JOIN detail_transaksi dt ON m.kode_menu = dt.kode_menu " +
                                            "JOIN transaksi t ON dt.kode_transaksi = t.kode_transaksi " +
                                            "WHERE m.kode_menu LIKE '%MI%' " +
-                                           "AND t.tgl_transaksi >= DATE_SUB(CURDATE(), INTERVAL 40 MONTH) " +
+                                           "AND t.tgl_transaksi >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH) " +
                                            "GROUP BY m.nama_menu");
             while(rs.next()){
                 tblMinuman.addRow(new Object[]{
@@ -233,7 +272,7 @@ public class GrafikBaru extends JPanel {
        try {
         String queryTopSellerMakanan = "SELECT m.nama_menu, SUM(dt.jumlah) AS total_terjual FROM menu m "
                 + "LEFT JOIN detail_transaksi dt ON m.kode_menu = dt.kode_menu AND m.kode_menu LIKE 'MA%' "
-                + "JOIN transaksi t ON dt.kode_transaksi = t.kode_transaksi WHERE t.tgl_transaksi >= DATE_SUB(CURDATE(), INTERVAL 40 MONTH) "
+                + "JOIN transaksi t ON dt.kode_transaksi = t.kode_transaksi WHERE t.tgl_transaksi >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH) "
                 + "GROUP BY m.nama_menu ORDER BY total_terjual DESC LIMIT 3;";
 
         PreparedStatement psTopSeller = konek.GetConnection().prepareStatement(queryTopSellerMakanan);
@@ -261,7 +300,7 @@ public class GrafikBaru extends JPanel {
     try { 
         String queryTopSellerMinuman = "SELECT m.nama_menu, SUM(dt.jumlah) AS total_terjual FROM menu m LEFT "
                 + "JOIN detail_transaksi dt ON m.kode_menu = dt.kode_menu AND m.kode_menu LIKE 'MI%' "
-                + "JOIN transaksi t ON dt.kode_transaksi = t.kode_transaksi WHERE t.tgl_transaksi >= DATE_SUB(CURDATE(), INTERVAL 40 MONTH)"
+                + "JOIN transaksi t ON dt.kode_transaksi = t.kode_transaksi WHERE t.tgl_transaksi >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH)"
                 + "GROUP BY m.nama_menu ORDER BY total_terjual DESC LIMIT 3;";
                 
         PreparedStatement psTopSellerMin = konek.GetConnection().prepareStatement(queryTopSellerMinuman);
@@ -302,6 +341,8 @@ public class GrafikBaru extends JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
+        background1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         makanan1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         makanan1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -317,6 +358,8 @@ public class GrafikBaru extends JPanel {
         makanan1.setRowHeight(25);
         makanan1.setShowHorizontalLines(true);
         jScrollPane3.setViewportView(makanan1);
+
+        background1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 522, 220));
 
         minuman1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         minuman1.setModel(new javax.swing.table.DefaultTableModel(
@@ -334,6 +377,8 @@ public class GrafikBaru extends JPanel {
         minuman1.setShowHorizontalLines(true);
         jScrollPane4.setViewportView(minuman1);
 
+        background1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, 488, 220));
+
         bestSeller3minuman1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         bestSeller3minuman1.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -345,24 +390,27 @@ public class GrafikBaru extends JPanel {
         shape1.setLayout(shape1Layout);
         shape1Layout.setHorizontalGroup(
             shape1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, shape1Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addComponent(bestSeller3minuman1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
             .addGroup(shape1Layout.createSequentialGroup()
-                .addGap(121, 121, 121)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE)
+                .addGroup(shape1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, shape1Layout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(88, 88, 88))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, shape1Layout.createSequentialGroup()
+                        .addComponent(bestSeller3minuman1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))))
         );
         shape1Layout.setVerticalGroup(
             shape1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, shape1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(bestSeller3minuman1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bestSeller3minuman1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
+
+        background1.add(shape1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 400, 130));
 
         bestSeller3makanan1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         bestSeller3makanan1.setForeground(new java.awt.Color(255, 255, 255));
@@ -376,14 +424,13 @@ public class GrafikBaru extends JPanel {
         shape2Layout.setHorizontalGroup(
             shape2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(shape2Layout.createSequentialGroup()
-                .addGroup(shape2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(shape2Layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(jLabel3))
-                    .addGroup(shape2Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(bestSeller3makanan1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(109, 109, 109)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, shape2Layout.createSequentialGroup()
+                .addContainerGap(82, Short.MAX_VALUE)
+                .addComponent(bestSeller3makanan1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         shape2Layout.setVerticalGroup(
             shape2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -391,50 +438,24 @@ public class GrafikBaru extends JPanel {
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bestSeller3makanan1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addComponent(bestSeller3makanan1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        background1.add(shape2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 400, 160));
 
-        javax.swing.GroupLayout background1Layout = new javax.swing.GroupLayout(background1);
-        background1.setLayout(background1Layout);
-        background1Layout.setHorizontalGroup(
-            background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(background1Layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(shape2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(shape1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46))
-            .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(background1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 15, Short.MAX_VALUE)))
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
-        background1Layout.setVerticalGroup(
-            background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(background1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background1Layout.createSequentialGroup()
-                        .addComponent(shape2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(shape1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(235, Short.MAX_VALUE))
-            .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(background1Layout.createSequentialGroup()
-                    .addContainerGap(360, Short.MAX_VALUE)
-                    .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addGap(0, 29, Short.MAX_VALUE)))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
+
+        background1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 600, 300));
 
         add(background1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
