@@ -118,7 +118,7 @@ public class riwayat extends javax.swing.JPanel {
        tabel_riwayat.setModel(tbl);
         try{
             Statement statement = (Statement)konek.GetConnection().createStatement();
-            ResultSet res= statement.executeQuery("select * from transaksi where tgl_transaksi <(select max(tgl_transaksi) from transaksi); ");
+            ResultSet res= statement.executeQuery("select * from transaksi where kode_transaksi <(select max(kode_transaksi) from transaksi); ");
             while(res.next())
             {
                 tbl.addRow(new Object[] {
