@@ -15,6 +15,7 @@ public class scanrfid extends javax.swing.JFrame {
     private Admin ad;
     private Karyawan kr;
     private login lg;
+    private boolean login = true;
     
     public scanrfid(login login) {
         this.lg = login;
@@ -60,6 +61,10 @@ public class scanrfid extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Kartu tidak terdeteksi");
                 }
             }
+            else{
+                JOptionPane.showMessageDialog(null, "Kartu tidak terdeteksi");
+                login=false;
+            }
         } catch (Exception e) {
             e.getMessage();
         }
@@ -72,7 +77,6 @@ public class scanrfid extends javax.swing.JFrame {
 
         Outer = new com.swing.Shape();
         background21 = new com.swing.background2();
-        jPanel1 = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         close1 = new com.button.Close();
         body = new javax.swing.JLabel();
@@ -84,10 +88,6 @@ public class scanrfid extends javax.swing.JFrame {
         setUndecorated(true);
 
         background21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        background21.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 210, 30));
 
         title.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         title.setText("Scan RFID");
@@ -148,8 +148,14 @@ public class scanrfid extends javax.swing.JFrame {
         
         if(itemId.length()==10){
             login();
-            this.dispose();
-            lg.dispose();
+            if(login==false){
+                id.setText("");
+                login = true;
+            }
+            else{
+                this.dispose();
+                lg.dispose();
+            }
         }
         else{
             id.setText("");
@@ -200,7 +206,6 @@ public class scanrfid extends javax.swing.JFrame {
     private com.button.Close close1;
     private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables

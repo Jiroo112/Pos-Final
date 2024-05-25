@@ -9,6 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
@@ -122,7 +124,8 @@ public class popUp_bayar extends javax.swing.JFrame {
     }
     
     public void simpan(){
-        
+        Date tgl_transaksi = new Date();
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String username = getUsername();
         String id = getIdtrx();
         int bayar = Integer.parseInt(pembayaran.getText());
@@ -134,7 +137,7 @@ public class popUp_bayar extends javax.swing.JFrame {
         else{
             try {
                 Statement st = konek.GetConnection().createStatement();
-                st.executeUpdate("UPDATE transaksi SET username = '"+username+"', total = '"+subtotal+"', bayar = '"+bayar+"', kembalian = '"+jumlah+"' WHERE kode_transaksi = '"+id+"'");
+                st.executeUpdate("UPDATE transaksi SET username = '"+username+"', tgl_transaksi = '"+dateformat.format(tgl_transaksi)+"', total = '"+subtotal+"', bayar = '"+bayar+"', kembalian = '"+jumlah+"' WHERE kode_transaksi = '"+id+"'");
                 invoice();
                 done.setVisible(true);
                 report();

@@ -189,12 +189,24 @@ public class Karyawan extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 riwayatMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                riwayatMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                riwayatMouseExited(evt);
+            }
         });
 
         logout.setImage(new javax.swing.ImageIcon(getClass().getResource("/com/picture/logout.png"))); // NOI18N
         logout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logoutMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                logoutMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                logoutMouseExited(evt);
             }
         });
 
@@ -242,7 +254,7 @@ public class Karyawan extends javax.swing.JFrame {
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
-                .addContainerGap(1003, Short.MAX_VALUE)
+                .addContainerGap(1020, Short.MAX_VALUE)
                 .addComponent(tampilan1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -258,7 +270,7 @@ public class Karyawan extends javax.swing.JFrame {
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1063, Short.MAX_VALUE)
+            .addGap(0, 1080, Short.MAX_VALUE)
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -350,6 +362,26 @@ public class Karyawan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Batal keluar");
         }
     }//GEN-LAST:event_logoutMouseClicked
+
+    private void riwayatMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_riwayatMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR) {
+        });
+    }//GEN-LAST:event_riwayatMouseEntered
+
+    private void riwayatMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_riwayatMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR) {
+        });
+    }//GEN-LAST:event_riwayatMouseExited
+
+    private void logoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR) {
+        });
+    }//GEN-LAST:event_logoutMouseEntered
+
+    private void logoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseExited
+        setCursor(new Cursor(Cursor.HAND_CURSOR) {
+        });
+    }//GEN-LAST:event_logoutMouseExited
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
