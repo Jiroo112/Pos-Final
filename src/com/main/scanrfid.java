@@ -48,14 +48,25 @@ public class scanrfid extends javax.swing.JFrame {
         
         try {
             Statement st = konek.GetConnection().createStatement();
-            ResultSet rs = st.executeQuery("SELECT barcodenumber, jabatan FROM data_karyawan WHERE barcodenumber = '"+itemId+"'");
+            ResultSet rs = st.executeQuery("SELECT username, jabatan FROM data_karyawan WHERE barcodenumber = '"+itemId+"'");
             if(rs.next()){
                 String jabatan = rs.getString("jabatan");
+                String nama = rs.getString("username");
                 if(jabatan.equals("Admin")){
                     ad.setVisible(true);
+                    try {
+                        Statement ss = konek.GetConnection().createStatement();
+                        ss.executeUpdate("INSERT INTO riwayat_login (username) VALUES ('"+nama+"')");
+                    } catch (Exception e) {
+                    }
                 }
                 else if(jabatan.equals("Kasir")){
                     kr.setVisible(true);
+                    try {
+                        Statement ss = konek.GetConnection().createStatement();
+                        ss.executeUpdate("INSERT INTO riwayat_login (username) VALUES ('"+nama+"')");
+                    } catch (Exception e) {
+                    }
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Kartu tidak terdeteksi");
