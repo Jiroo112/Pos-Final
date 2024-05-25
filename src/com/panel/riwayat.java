@@ -101,6 +101,7 @@ public class riwayat extends javax.swing.JPanel {
             title.setFont(font);
             body.setFont(font2);
             tanggalButton.setFont(font3);
+            tabel_riwayat.setFont(font2);
             
         } catch (Exception e) {
             e.getMessage();
@@ -184,10 +185,9 @@ public class riwayat extends javax.swing.JPanel {
         body.setText("Pilih Riwayat Transaksi yang Anda Cari");
         jPanel1.add(body, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, -1, -1));
 
-        panelShadow1.setBackground(new java.awt.Color(122, 178, 178));
+        panelShadow1.setBackground(new java.awt.Color(255, 255, 255));
         panelShadow1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tabel_riwayat.setBackground(new java.awt.Color(122, 178, 178));
         tabel_riwayat.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -211,7 +211,7 @@ public class riwayat extends javax.swing.JPanel {
         tabel_riwayat.setShowGrid(false);
         jScrollPane1.setViewportView(tabel_riwayat);
 
-        panelShadow1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 910, 210));
+        panelShadow1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 910, 230));
 
         jPanel1.add(panelShadow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 950, 270));
 

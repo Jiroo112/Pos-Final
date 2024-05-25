@@ -216,6 +216,7 @@ public class belanja extends javax.swing.JPanel {
             UangBelanja.setFont(font2);
             Keterangan.setFont(font2);
             username.setFont(font3);
+            table_belanja.setFont(font2);
         } catch (Exception e) {
             e.getMessage();
         }

@@ -267,17 +267,19 @@ public class DataKaryawan extends javax.swing.JPanel {
     }//GEN-LAST:event_fbutton1ActionPerformed
 
     private void hapus_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapus_buttonActionPerformed
-    int index = karyawan.getSelectedRow();
-    
-    DefaultTableModel model = (DefaultTableModel)karyawan.getModel();      
-    String Username = model.getValueAt(index, 0).toString();
-    
+        int index = karyawan.getSelectedRow();
+
+        DefaultTableModel model = (DefaultTableModel) karyawan.getModel();
+        String Username = model.getValueAt(index, 0).toString();
+
         try {
-            Statement st = konek.GetConnection().createStatement();
-            ResultSet rs = st.executeQuery("DELETE FROM data_karyawan WHERE username = '"+Username+"';");
+            Statement statement = (Statement) konek.GetConnection().createStatement();
+            statement.executeUpdate("DELETE FROM data_karyawan WHERE username = '" + Username + "';");
+            JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus");
         } catch (Exception e) {
             e.getMessage();
         }
+        tabelkaryawan();
     }//GEN-LAST:event_hapus_buttonActionPerformed
 
     private void karyawanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_karyawanMouseClicked

@@ -106,17 +106,20 @@ public class Transaksi extends javax.swing.JPanel {
     }
     
     public void delItem(detailItem detail, modelDetail detail2) {
-        panelItem2.remove(detail);
-        panelItem2.repaint();
-        panelItem2.revalidate();
-        System.out.println(detail2.getIdtrx());
-        try {
-            Statement st = konek.GetConnection().createStatement();
-            st.executeUpdate("DELETE FROM detail_transaksi WHERE id_pembelian = '"+detail2.getIdtrx()+"'");
+        int result = JOptionPane.showConfirmDialog(null, "Apakah anda yakin ingin menghapus?");
+        if (result == JOptionPane.YES_NO_OPTION) {
+            panelItem2.remove(detail);
+            panelItem2.repaint();
+            panelItem2.revalidate();
+            System.out.println(detail2.getIdtrx());
+            try {
+                Statement st = konek.GetConnection().createStatement();
+                st.executeUpdate("DELETE FROM detail_transaksi WHERE id_pembelian = '" + detail2.getIdtrx() + "'");
+            } catch (Exception e) {
+            }
+        } else {
             JOptionPane.showMessageDialog(this, "data dihapus");
-        } catch (Exception e) {
         }
-    
     }
     
     public void jumlah(){

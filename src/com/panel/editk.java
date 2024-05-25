@@ -59,6 +59,7 @@ public class editk extends javax.swing.JFrame {
             jLabel14.setFont(font3);
             jLabel15.setFont(font3);
             jLabel16.setFont(font3);
+            jLabel17.setFont(font3);
             txt_email.setFont(font3);
             pass.setFont(font3);
             jCpass.setFont(font3);

@@ -297,7 +297,7 @@ public JTextField getTotaluntungField() {
     private com.swing.Shape shape1;
     private com.button.Fbutton tanggalbt;
     private javax.swing.JLabel title;
-    private javax.swing.JTextField totaluntungField;
+    public javax.swing.JTextField totaluntungField;
     // End of variables declaration//GEN-END:variables
 
 }

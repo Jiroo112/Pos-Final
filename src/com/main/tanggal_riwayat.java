@@ -118,9 +118,11 @@ public class tanggal_riwayat extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(238, 247, 255));
         jPanel1.setLayout(new java.awt.BorderLayout());
 
+        shape1.setMinimumSize(new java.awt.Dimension(620, 490));
+        shape1.setPreferredSize(new java.awt.Dimension(610, 480));
         shape1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        background1.setMinimumSize(new java.awt.Dimension(612, 480));
+        background1.setMinimumSize(new java.awt.Dimension(600, 470));
         background1.setPreferredSize(new java.awt.Dimension(612, 480));
         background1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -213,7 +215,7 @@ public class tanggal_riwayat extends javax.swing.JFrame {
         body.setText("Pilih Tanggal Sesuai dengan Data yang Ingin Anda Cari");
         background1.add(body, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 330, 30));
 
-        shape1.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 610, 460));
+        shape1.add(background1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 590, 460));
 
         jPanel1.add(shape1, java.awt.BorderLayout.CENTER);
 

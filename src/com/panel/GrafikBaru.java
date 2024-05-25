@@ -444,18 +444,8 @@ private JFreeChart createBarChart() {
 
         background1.add(shape2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 400, 160));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        background1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 600, 300));
+        jPanel1.setLayout(new java.awt.BorderLayout());
+        background1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 610, 300));
 
         add(background1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
