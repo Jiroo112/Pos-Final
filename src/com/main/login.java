@@ -26,7 +26,7 @@ public class login extends javax.swing.JFrame {
         initComponents();
         font();
         setBackground(new Color(0, 0, 0, 0));
-        close1.event(this);
+        close11.event(this);
         
     }
     public void font(){
@@ -74,7 +74,7 @@ public class login extends javax.swing.JFrame {
         fbutton2 = new com.button.Fbutton();
         title = new javax.swing.JLabel();
         pictureBox1 = new com.swing.PictureBox();
-        close1 = new com.button.Close();
+        close11 = new com.button.Closelogin();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -140,8 +140,8 @@ public class login extends javax.swing.JFrame {
         title.setToolTipText("");
 
         pictureBox1.setImage(new javax.swing.ImageIcon(getClass().getResource("/com/picture/low.png"))); // NOI18N
-        pictureBox1.add(close1);
-        close1.setBounds(390, 10, 63, 20);
+        pictureBox1.add(close11);
+        close11.setBounds(390, 10, 63, 20);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -334,7 +334,7 @@ public class login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel body;
-    private com.button.Close close1;
+    private com.button.Closelogin close11;
     private com.button.Fbutton fbutton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jname;

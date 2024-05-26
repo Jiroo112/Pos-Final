@@ -173,7 +173,7 @@ public class popUp_bayar extends javax.swing.JFrame {
     
     public void report(){
         try {
-            String report = ("C:\\Users\\ok\\Documents\\NetBeansProjects\\Pos-Kasir\\src\\com\\report\\struk.jrxml");
+            String report = ("D:\\projek\\KasirSem2\\kasir15\\Pos-Final\\src\\com\\report\\struk.jrxml");
             Connection koneksi = konek.GetConnection();
             HashMap hash = new HashMap();
             JasperReport Jrp = JasperCompileManager.compileReport(report);

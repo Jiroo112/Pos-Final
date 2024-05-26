@@ -220,6 +220,7 @@ public class editk extends javax.swing.JFrame {
         jComb_gender.setBackground(new java.awt.Color(222, 254, 255));
         jComb_gender.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
         jComb_gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-Laki", "Perempuan" }));
+        jComb_gender.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jComb_gender.setEnabled(false);
         jComb_gender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -241,6 +242,7 @@ public class editk extends javax.swing.JFrame {
         jComb_jabatan.setBackground(new java.awt.Color(222, 254, 255));
         jComb_jabatan.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
         jComb_jabatan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Kasir" }));
+        jComb_jabatan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jComb_jabatan.setEnabled(false);
         jComb_jabatan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -421,7 +423,7 @@ public class editk extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Password Kurang Dari 8 Karakter");
         } else if (!password.matches(".*[A-Z].*")) {
             JOptionPane.showMessageDialog(this, "Password Harus Mengandung Setidaknya Satu Huruf Kapital");
-        } else if (!password.matches("^(?=.*[!@#$%^&*()-+])(?=.*\\d).*$")) {
+        } else if (!password.matches("^(?=.*[!@_#$%^&*()-+])(?=.*\\d).*$")) {
             JOptionPane.showMessageDialog(this, "Password Harus Mengandung Setidaknya Satu Simbol Dan Satu Angka");
         } else {
             try {

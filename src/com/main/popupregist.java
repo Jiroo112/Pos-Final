@@ -428,7 +428,7 @@ public class popupregist extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Password Kurang Dari 8 Karakter");
         } else if (!password.matches(".*[A-Z].*")) {
             JOptionPane.showMessageDialog(this, "Password Harus Mengandung Setidaknya Satu Huruf Kapital");
-        } else if (!password.matches("^(?=.*[!@#$%^&*()-+])(?=.*\\d).*$")) {
+        } else if (!password.matches("^(?=.*[!@_#$%^&*()-+])(?=.*\\d).*$")) {
             JOptionPane.showMessageDialog(this, "Password Harus Mengandung Setidaknya Satu Simbol Dan Satu Angka");
         } else {
             try {
